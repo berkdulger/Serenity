@@ -7,13 +7,8 @@ addons:
   sonarcloud:
     organization: "berkdulger-github"
     token:
-      secure: $SECRET_KEY
-
-install:
-  - dotnet tool install --global dotnet-sonarscanner
+      secure: ${SECRET_KEY}
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - dotnet-sonarscanner begin /o:berkdulger-github /k:dotNetCodeQualityTraining_Berk /d:sonar.host.url=https://sonarcloud.io /d:sonar.login=2e05870907d0d0da6019a47d4e67ae007ce79426 
-  - dotnet build ../src/Serenity.Net.sln
-  - dotnet-sonarscanner end /d:sonar.login=2e05870907d0d0da6019a47d4e67ae007ce79426
+  - sonar-scanner
