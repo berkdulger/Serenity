@@ -1,5 +1,5 @@
 language: csharp
-os: windows
+os: osx
 mono: none
 dotnet: 5.0.301
 solution: /src/Serenity.Net.sln
