@@ -2,7 +2,7 @@ addons:
   sonarcloud:
     organization: "berkdulger-github"
     token:
-      secure: "HqSchR4O0YzY4iAf6nWyiA" # encrypted value of your token
+      secure: $SECRET_KEY
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
