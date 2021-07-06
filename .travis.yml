@@ -5,6 +5,7 @@ dotnet: 5.0.301
 solution: /src/Serenity.Net.sln
 
 before_install:
+  - brew install npm
   - dotnet tool install --global dotnet-sonarscanner
 
 script:
