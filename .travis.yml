@@ -6,4 +6,7 @@ addons:
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - sonar-scanner
+  - dotnet tool install --global dotnet-sonarscanner
+  - dotnet sonarscanner begin /o:berkdulger-github /k:dotNetCodeQualityTraining_Berk /d:sonar.host.url=https://sonarcloud.io /d:sonar.login=2e05870907d0d0da6019a47d4e67ae007ce79426 /d:sonar.projectBaseDir=/
+  - dotnet build /src/Serenity.Net.sln
+  - dotnet sonarscanner end /d:sonar.login=2e05870907d0d0da6019a47d4e67ae007ce79426
