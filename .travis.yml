@@ -1,23 +1,9 @@
-language: csharp
-solution: Serenity.Net.sln
-mono: none
-dotnet: 5.0.301
-
 addons:
   sonarcloud:
     organization: "berkdulger-github"
     token:
-      secure: bb9bc48a30ef62b703390566ee299140d862e7d0
-
-before_install:
-- bash ./tools/travis-ci-install-sonar.sh
-
-install:
-- dotnet restore src
+      secure: "HqSchR4O0YzY4iAf6nWyiA" # encrypted value of your token
 
 script:
- - dotnet sonarscanner begin /o:berkdulger-github /k:dotNetCodeQualityTraining_Berk /d:sonar.host.url=https://sonarcloud.io /d:sonar.login=2e05870907d0d0da6019a47d4e67ae007ce79426 
-
- - dotnet build /src/Serenity.Net.sln
-
- - dotnet sonarscanner end /d:sonar.login=2e05870907d0d0da6019a47d4e67ae007ce79426
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
